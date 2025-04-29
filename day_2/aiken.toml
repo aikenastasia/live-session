@@ -1,0 +1,23 @@
+name = "aikenastasia/day_2"
+version = "0.0.0"
+compiler = "v1.1.16"
+plutus = "v3"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'aikenastasia/day_2'"
+
+[repository]
+user = "aikenastasia"
+project = "day_2"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v2.2.0"
+source = "github"
+
+[[dependencies]]
+name = "aiken-lang/fuzz"
+version = "2.1.0"
+source = "github"
+
+[config]
