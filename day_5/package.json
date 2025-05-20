@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "tsx offchainMultiConstructors.ts"
+  },
+  "packageManager": "pnpm@10.7.1",
+  "dependencies": {
+    "@lucid-evolution/lucid": "^0.4.27",
+    "tsx": "^4.19.4"
+  }
+}
