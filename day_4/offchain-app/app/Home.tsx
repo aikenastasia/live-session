@@ -1,6 +1,12 @@
 import { Button } from "@heroui/button";
 import { Snippet } from "@heroui/snippet";
-import { Address, Koios, Lucid, LucidEvolution, WalletApi } from "@lucid-evolution/lucid";
+import {
+  Address,
+  Koios,
+  Lucid,
+  LucidEvolution,
+  WalletApi,
+} from "@lucid-evolution/lucid";
 import { useState } from "react";
 
 export default function Home() {
@@ -39,7 +45,10 @@ export default function Home() {
   };
 
   async function connect(wallet: Wallet): Promise<Connection> {
-    const [lucid, api] = await Promise.all([Lucid(new Koios("/koios"), "Preview"), wallet.enable()]);
+    const [lucid, api] = await Promise.all([
+      Lucid(new Koios("/koios"), "Preview"),
+      wallet.enable(),
+    ]);
 
     lucid.selectWallet.fromAPI(api);
 
@@ -75,7 +84,9 @@ export default function Home() {
               key={`wallet.${w}`}
               className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg capitalize"
               radius="full"
-              onPress={() => connect(wallet).then(setConnection).catch(console.log)}
+              onPress={() =>
+                connect(wallet).then(setConnection).catch(console.log)
+              }
             >
               {wallet.name}
             </Button>
@@ -94,7 +105,11 @@ export default function Home() {
           <Button
             className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg max-w-fit"
             radius="full"
-            onPress={() => doSomething("Hello, Lucid!", connection).then(setResult).catch(console.log)}
+            onPress={() =>
+              doSomething("Hello, Lucid!", connection)
+                .then(setResult)
+                .catch(console.log)
+            }
           >
             Do Something
           </Button>

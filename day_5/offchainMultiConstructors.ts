@@ -35,7 +35,7 @@ export function deserialise(cbor: string): MultiConstructor {
       return { Constr2: BigInt(fields[0]) };
 
     case 2:
-      return { Constr3: { field1: toText(fields[0]), field2: fields[1].index === 1 } };
+      return { Constr3: { field1: toText(fields[0]), field2: fields[1].index !== 0 } };
 
     default:
       throw "Invalid Index";
